@@ -2567,7 +2567,7 @@ address strong, address b {
 }
 
 .single-cat-item:hover .category-thumb .category-name {
-    top: 70%;
+    top: 110%;
 }
 
 .single-cat-item .category-thumb {
@@ -2585,7 +2585,7 @@ address strong, address b {
 .single-cat-item .category-thumb .category-name {
     border: 2px solid #fff;
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
