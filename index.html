@@ -306,12 +306,11 @@
                                     <!-- Single Product Item -->
                                     <div class="single-product-item text-center">
                                         <figure class="product-thumb">
-                                            <a><img src="assets/img/jew/81.jpg"
-                                                                               alt="Products" class="img-fluid"></a>
+                                            <a><img src="assets/img/jew/81.jpg" alt="Products" class="img-fluid zoom-img" onclick="openZoomModal()"></a>
                                         </figure>
-
+                                    
                                         <div class="product-details">
-                                            <h2><a>Name</a></h2>
+                                            <h2><a>SL No</a></h2>
                                             <div class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -321,26 +320,21 @@
                                             </div>
                                             <span class="price">Gram</span>
                                             <span class="product-bedge">New</span>
+                                            
                                         </div>
-
-                                        <div class="product-meta">
-                                            <button type="button" data-toggle="modal" data-target="#quickView">
-                                                <span data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                        class="fa fa-compress"></i></span>
-                                            </button>
-                                        </div>
+                                        <br>
+                                        <button class="wabtn" onclick="openWhatsAppChat()"><a>WhatsApp</a></button>
                                     </div>
                                     <!-- Single Product Item -->
 
                                     <!-- Single Product Item -->
                                     <div class="single-product-item text-center">
                                         <figure class="product-thumb">
-                                            <a><img src="assets/img/jew/84.jpg"
-                                                                               alt="Products" class="img-fluid"></a>
+                                            <a><img src="assets/img/jew/82.jpg" alt="Products" class="img-fluid zoom-img" onclick="openZoomModal()"></a>
                                         </figure>
-
+                                    
                                         <div class="product-details">
-                                            <h2><a>Name</a></h2>
+                                            <h2><a>SL No</a></h2>
                                             <div class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -350,14 +344,10 @@
                                             </div>
                                             <span class="price">Gram</span>
                                             <span class="product-bedge">New</span>
+                                            
                                         </div>
-
-                                        <div class="product-meta">
-                                            <button type="button" data-toggle="modal" data-target="#quickView">
-                                                <span data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                        class="fa fa-compress"></i></span>
-                                            </button>
-                                        </div>
+                                        <br>
+                                        <button class="wabtn" onclick="openWhatsAppChat()"><a>WhatsApp</a></button>
                                     </div>
                                     <!-- Single Product Item -->
                                     <!-- Single Product Item -->
@@ -1877,6 +1867,22 @@
 
 <!--=== Active Js ===-->
 <script src="assets/js/active.js"></script>
+
+<script>
+    function openWhatsAppChat() {
+        // Replace 'your_phone_number' with your actual phone number (including country code)
+        var phoneNumber = 'your_phone_number';
+
+        // You can also add a message using 'text' parameter
+        var message = encodeURIComponent('Hello, I am interested in your Jewellery.');
+
+        // WhatsApp API URL
+        var whatsappApiUrl = 'https://api.whatsapp.com/send?phone=' + 9564579440 + '&text=' + message;
+
+        // Open WhatsApp chat window in a new tab
+        window.open(whatsappApiUrl, '_blank');
+    }
+</script>
 </body>
 
 </html>
