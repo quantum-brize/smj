@@ -31,6 +31,72 @@
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
+    <style>
+        .openinghours {
+            font-family:Lucida Console;
+            border-radius:4px;
+            margin:10px;
+            box-shadow: 0 0 10px black;
+            padding:0 10px 0 10px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .openinghourscontent {
+            float:center;
+        }
+        .openinghourscontent h2 {
+            display:block;
+            text-align:center;
+            margin-top:.33em;
+        }
+        .openinghourscontent button {
+            color:white;
+            font-family:Courier New;
+            font-size:large;
+            font-weight:bolder;
+            background-color:#4679BD;
+            border-radius:4px;
+            width:100%;
+            margin-bottom:10px;
+        }
+        .today {
+            color: #8AC007;
+        }
+        .opening-hours-table tr td:first-child {
+            font-weight:bold;
+        }
+        #open-status {
+            display:block;
+            margin-top:-1em;
+            text-align:center;
+            border:dotted lightgrey 3px;
+        }
+        .openorclosed:after {
+            content:" open during these hours:";
+        }
+        .open {
+            color:green;
+        }
+        .open:after {
+            content:" Open";
+            color: #6C0;
+        }
+        .closed:after {
+            content:" Closed";
+            color: red;
+        }
+        .opening-hours-table tr td {
+            padding:5px;
+        }
+    </style>
+    <style>
+    #map-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:70vh;
+    }
+    </style>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -111,6 +177,7 @@
 </header>
 <!--== Header Area End ==-->
 
+
 <!--== Search Box Area Start ==-->
 <div class="body-popup-modal-area">
     <span class="modal-close"><img src="assets/img/cancel.png" alt="Close" class="img-fluid"/></span>
@@ -152,7 +219,71 @@
             <div class="col-lg-6">
                 <!-- About Image Area Start -->
                 <div class="about-image-wrap">
-                    <a href="about.html"><img src="assets/img/about-img.png" alt="About Us" class="img-fluid"/></a>
+                    <section class="openinghours">
+                        <div class="openinghourscontent section">
+                            <div class="header">
+                                 <h2>Opening hours</h2>
+                     <span id="open-status"><small class="openorclosed">We are</small></span>
+                    
+                            </div>
+                            <table class="opening-hours-table">
+                                <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
+                                    <td>Monday</td>
+                                    <td class="opens">10:00</td>
+                                    <td>-</td>
+                                    <td class="closes">22:00</td>
+                                </tr>
+                                <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
+                                    <td>Tuesday</td>
+                                    <td class="opens">10:00</td>
+                                    <td>-</td>
+                                    <td class="closes">22:00</td>
+                                </tr>
+                                <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
+                                    <td>Wednesday</td>
+                                    <td class="opens">10:00</td>
+                                    <td>-</td>
+                                    <td class="closes">22:00</td>
+                                </tr>
+                                <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
+                                    <td>Thursday</td>
+                                    <td class="opens">10:00</td>
+                                    <td>-</td>
+                                    <td class="closes">22:00</td>
+                                </tr>
+                                <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
+                                    <td>Friday</td>
+                                    <td class="opens">10:00</td>
+                                    <td>-</td>
+                                    <td class="closes">22:00</td>
+                                </tr>
+                                <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
+                                    <td>Saturday</td>
+                                    <td class="opens">10:00</td>
+                                    <td>-</td>
+                                    <td class="closes">22:00</td>
+                                </tr>
+                                <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
+                                    <td>Sunday</td>
+                                    <td class="opens">10:00</td>
+                                    <td>-</td>
+                                    <td class="closes">22:00</td>
+                                </tr>
+                            </table>
+                            <button style="cursor: pointer;" title="Make an Apointment Online" data-appointlet="u387">See Our New Collection</button>
+                            <script>
+                                (function(e, t, n, r) {
+                                    if (e) return;
+                                    t._appt = true;
+                                    var i = n.createElement(r),
+                                        s = n.getElementsByTagName(r)[0];
+                                    i.async = true;
+                                    i.src = '//dje0x8zlxc38k.cloudfront.net/loaders/s-min.js';
+                                    s.parentNode.insertBefore(i, s)
+                                })(window._appt, window, document, "script")
+                            </script>
+                        </div>
+                    </section>
                 </div>
                 <!-- About Image Area End -->
             </div>
@@ -275,6 +406,10 @@
 </div>
 <!--== Page Content Wrapper End ==-->
 
+<div id="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d920.4079933958093!2d88.13038466951373!3d22.66750629871402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f87f5170aa879b%3A0xf046e3e7b41fbe31!2sS%20M%20Jewellers!5e0!3m2!1sen!2sin!4v1696683157699!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<br>
+<br>=-    
+
 <!-- Footer Image Gallery Area Start -->
 <div class="footer-image-gallery">
     <div class="ruby-container">
@@ -377,6 +512,50 @@
 
 <!--=== Active Js ===-->
 <script src="assets/js/active.js"></script>
+
+<script>
+    var currentDate = new Date();
+    var weekday = [];
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var currentDay = weekday[currentDate.getDay()];
+
+    var currentTimeHours = currentDate.getHours();
+    currentTimeHours = currentTimeHours < 10 ? "0" + currentTimeHours : currentTimeHours;
+    var currentTimeMinutes = currentDate.getMinutes();
+    var timeNow = currentTimeHours + "" + currentTimeMinutes;
+
+    var currentDayID = "#" + currentDay; //gets todays weekday and turns it into id
+    $(currentDayID).toggleClass("today"); //this works at hightlighting today
+
+    var openTimeSplit = $(currentDayID).children('.opens').text().split(":");
+
+    var openTimeHours = openTimeSplit[0];
+    openTimeHours = openTimeHours < 10 ? "0" + openTimeHours : openTimeHours;
+
+    var openTimeMinutes = openTimeSplit[1];
+    var openTimex = openTimeSplit[0] + openTimeSplit[1];
+
+    var closeTimeSplit = $(currentDayID).children('.closes').text().split(":");
+
+    var closeTimeHours = closeTimeSplit[0];
+    closeTimeHours = closeTimeHours < 10 ? "0" + closeTimeHours : closeTimeHours;
+
+    var closeTimeMinutes = closeTimeSplit[1];
+    var closeTimex = closeTimeSplit[0] + closeTimeSplit[1];
+
+    if (timeNow >= openTimex && timeNow <= closeTimex) {
+        $(".openorclosed").toggleClass("open");
+    } else {
+        $(".openorclosed").toggleClass("closed");
+}
+</script>
 </body>
 
 </html>
